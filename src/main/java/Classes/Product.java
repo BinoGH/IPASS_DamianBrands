@@ -1,20 +1,19 @@
 package Classes;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Product {
     private String name;
     private double prijs;
     private String beschrijving;
+    private static ArrayList<Product> assortiment = new ArrayList<Product>();
 
     public Product(String name, double prijs){
         this.name = name;
         this.prijs = prijs;
+        assortiment.add(this);
     }
-
-//    public Product(String name, double prijs, String beschrijving){
-//        name = this.name;
-//        prijs = this.prijs;
-//        beschrijving = this.beschrijving;
-//    }
 
     public String getName() {
         return name;
@@ -38,6 +37,10 @@ public class Product {
 
     public void setBeschrijving(String beschrijving) {
         this.beschrijving = beschrijving;
+    }
+
+    public static ArrayList<Product> getAssortiment() {
+        return assortiment;
     }
 
     public String toString(){
