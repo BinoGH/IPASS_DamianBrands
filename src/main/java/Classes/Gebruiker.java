@@ -60,6 +60,10 @@ public class Gebruiker {
         }
     }
 
+    public void emptyEmails(){
+        emails.clear();
+    }
+
     public ArrayList<String> getEmails() {
         return emails;
     }

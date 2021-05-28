@@ -3,6 +3,7 @@ package ClassesTests;
 import Classes.Gebruiker;
 import Classes.Product;
 import Classes.Winkelwagen;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,19 +22,24 @@ public class GebruikerTest {
         gebruiker2 = new Gebruiker("email2", "123", true);
     }
 
+    @AfterEach
+    public void cleanUp(){
+        gebruiker1.emptyEmails();
+    }
+
     @Test
     public void nietAdminMaakProduct(){
         gebruiker1.newProduct("productTest", 1.00);
         assertEquals(0, Product.getAssortiment().toArray().length);
     }
 
-//    @Test
-//    public void adminMaakProduct(){
-//        System.out.println(gebruiker2.getAdmin());
-//        System.out.println(gebruiker2.toString());
-//        gebruiker2.newProduct("productTest", 1.00);
-//        assertEquals(1, Product.getAssortiment().toArray().length);
-//    }
+    @Test
+    public void adminMaakProduct(){
+        System.out.println(gebruiker2.getAdmin());
+        System.out.println(gebruiker2.toString());
+        gebruiker2.newProduct("productTest", 1.00);
+        assertEquals(1, Product.getAssortiment().toArray().length);
+    }
 
     @Test
     public void zelfdeEmails(){
