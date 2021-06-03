@@ -1,4 +1,4 @@
-package Classes;
+package nl.damian.IPASS.Classes;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ public class Gebruiker {
     private Winkelwagen winkelwagen = new Winkelwagen();
     private static ArrayList<String> emails = new ArrayList<>();
 
-    public Gebruiker(String email, String wachtwoord, Boolean admin){
+    public Gebruiker(String email, String wachtwoord, Boolean admin) throws Exception {
         if(!emails.contains(email)){
             if(admin.equals(false)){
                 Winkelwagen winkelwagen = new Winkelwagen();
@@ -23,6 +23,8 @@ public class Gebruiker {
                 this.wachtwoord = wachtwoord;
                 this.admin = admin;
             }
+        }else{
+            throw new Exception("Gebruikte email");
         }
     }
 
@@ -64,7 +66,7 @@ public class Gebruiker {
         emails.clear();
     }
 
-    public ArrayList<String> getEmails() {
+    public static ArrayList<String> getEmails() {
         return emails;
     }
 }

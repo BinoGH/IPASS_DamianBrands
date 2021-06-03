@@ -1,7 +1,7 @@
-package Classes;
+package nl.damian.IPASS.Classes;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String args[]) throws Exception{
         Gebruiker g1 = new Gebruiker("gamer@nl", "pog", false);
 
         Product p1 = new Product("product1", 2.50);

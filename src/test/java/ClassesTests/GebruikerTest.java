@@ -1,8 +1,7 @@
 package ClassesTests;
 
-import Classes.Gebruiker;
-import Classes.Product;
-import Classes.Winkelwagen;
+import nl.damian.IPASS.Classes.Gebruiker;
+import nl.damian.IPASS.Classes.Product;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +16,7 @@ public class GebruikerTest {
     private Product p2;
 
     @BeforeEach
-    public void init(){
+    public void init() throws Exception {
         gebruiker1 = new Gebruiker("email1", "w8woord", false);
         gebruiker2 = new Gebruiker("email2", "123", true);
     }
@@ -42,7 +41,7 @@ public class GebruikerTest {
     }
 
     @Test
-    public void zelfdeEmails(){
+    public void zelfdeEmails() throws Exception{
         gebruiker3 = new Gebruiker("email1", "w8woord", false);
         assertEquals(2, gebruiker3.getEmails().toArray().length);
     }

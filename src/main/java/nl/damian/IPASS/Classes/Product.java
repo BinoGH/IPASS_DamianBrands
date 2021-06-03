@@ -1,6 +1,5 @@
-package Classes;
+package nl.damian.IPASS.Classes;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Product {
