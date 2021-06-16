@@ -1,31 +1,13 @@
-var form = document.getElementById('form')
+let form = document.querySelector('#formNewProduct')
+let submitButton = document.querySelector("#submit")
 
-form.addEventListener('submit', function (event){
-    event.preventDefault()
-    var naam = document.getElementById('productName').value;
-    var prijs = document.getElementById('prijs').value;
+submitButton.addEventListener('click', function(){
+    var formData = new FormData(form);
+    var encData = new URLSearchParams(formData.entries());
 
-    console.log(naam);
-    console.log(prijs);
+    fetch("/restservices/product", {method: 'POST', body: encData})
+        .then(response => response.json())
+        .then(function(myJson) {
+            console.log(myJson);
+        })
 })
-
-// const submit = document.querySelector('button');
-// const logo = document.querySelector('logo');
-//
-// const init = function (){
-//     document.getElementById('button-opslaan').addEventListener('click', opslaan)
-// }
-//
-// submit.addEventListener('click', function (){
-//     logo.classList.add('test');
-// })
-//
-//
-// document.querySelector("")
-// fetch("restservices/product", {method: 'POST', body: encData})
-//     .then(response => response.json)
-//     .then()
-//
-// document.addEventListener('DOMContentLoaded', init);
-//
-// document.getElementById("form").submit();

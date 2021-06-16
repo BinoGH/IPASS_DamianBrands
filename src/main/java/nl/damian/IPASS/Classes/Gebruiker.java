@@ -7,25 +7,45 @@ public class Gebruiker {
     private String wachtwoord;
     private Boolean admin;
     private Winkelwagen winkelwagen = new Winkelwagen();
-    private static ArrayList<String> emails = new ArrayList<>();
+    private static ArrayList<Gebruiker> gebruikers = new ArrayList<>();
 
-    public Gebruiker(String email, String wachtwoord, Boolean admin) throws Exception {
-        if(!emails.contains(email)){
-            if(admin.equals(false)){
-                Winkelwagen winkelwagen = new Winkelwagen();
-                emails.add(email);
-                this.email = email;
-                this.wachtwoord = wachtwoord;
-                this.admin = admin;
-            }else{
-                emails.add(email);
-                this.email = email;
-                this.wachtwoord = wachtwoord;
-                this.admin = admin;
-            }
-        }else{
-            throw new Exception("Gebruikte email");
+    public Gebruiker(String email, String wachtwoord, Boolean admin){
+        this.email = email;
+        this.wachtwoord = wachtwoord;
+        this.admin = admin;
+
+//        if
+//
+//        if(!gebruikers.contains(email)){
+//            if(admin.equals(false)){
+//                Winkelwagen winkelwagen = new Winkelwagen();
+//                gebruikers.add(email);
+//                this.email = email;
+//                this.wachtwoord = wachtwoord;
+//                this.admin = admin;
+//            }else{
+//                gebruikers.add(email);
+//                this.email = email;
+//                this.wachtwoord = wachtwoord;
+//                this.admin = admin;
+//            }
+//        }else{
+//            throw new Exception("Gebruikte email");
+//        }
+    }
+
+    public static Gebruiker createGebruiker(String email, String wachtwoord, Boolean admin){
+        Gebruiker gebruiker = new Gebruiker(email, wachtwoord, admin);
+
+        if(!gebruikers.contains(gebruiker)){
+            gebruikers.add(gebruiker);
+            return gebruiker;
         }
+        return null;
+    }
+
+    public static Gebruiker login(String email, String wachtwoord){
+        
     }
 
     public Winkelwagen getWinkelwagen() {
@@ -63,10 +83,10 @@ public class Gebruiker {
     }
 
     public void emptyEmails(){
-        emails.clear();
+        gebruikers.clear();
     }
 
-    public static ArrayList<String> getEmails() {
-        return emails;
+    public static ArrayList<Gebruiker> getGebruikers() {
+        return gebruikers;
     }
 }

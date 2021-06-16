@@ -17,7 +17,9 @@
                 <div class="navlink">
                     <a href="newProduct.html">Nieuw product</a>
                 </div>
-
+                <div class="navlink">
+                    <a href="login.html">Login</a>
+                </div>
             </div>
 
             <div class="rightdiv">
@@ -26,44 +28,47 @@
                     <div>Shoppie</div>
                 </div>
 
-                <div class="logopng">
-                    <img src="images/logo.png" alt="logo">
-                </div>
+<!--                <div class="logopng">-->
+<!--                    <img src="images/logo.png" alt="logo">-->
+<!--                </div>-->
 
             </div>
         </div>
     </div>
 
-<!--    <div class="container3">-->
-<!--        <div class="topPane">-->
-<!--            <div class="overlappingPane"></div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="background">
+        <div class="container2">
+            <div class="form">
+                <form id="formNewProduct" autocomplete="off">
+                    <div class="newProductLabel">
+                        <label class="newProductLabel">Nieuw product</label>
+                    </div>
+                    <div class="naamLabel">
+                        <label for="productName">Product naam:</label>
+                    </div>
 
-    <div class="container2">
-        <div class="form">
-            <form id="form" method="post">
+                    <div class="naam">
+                        <input type="text" id="productName" name="productName" required>
+                    </div>
 
-                <div class="naam">
-                    <label for="productName">Product naam:</label>
-                    <input type="text" id="productName" name="productName" required>
-                </div>
+                    <div class="prijsLabel">
+                        <label for="productPrijs">Prijs:</label>
+                    </div>
 
-                <div class="prijs">
-                    <label for="productPrijs">Prijs:</label>
-                    <input type="text" id="productPrijs" name="productPrijs" required>
-                </div>
+                    <div class="prijs">
+                        <input type="text" id="productPrijs" name="productPrijs" required>
+                    </div>
 
-                <div class="buttons">
-                    <button id="submit" type="submit">Opslaan</button>
-                    <button id="reset" type="reset">Reset</button>
-                </div>
-
-            </form>
+                    <div class="buttons">
+                        <input type="button" id="submit" value="Opslaan">
+                        <button id="reset" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+
 </body>
 <script src="jsNewProduct.js">
-
 </script>
 </html>

@@ -1,8 +1,5 @@
 package nl.damian.IPASS.webservices;
-
-
 import nl.damian.IPASS.Classes.Product;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -11,8 +8,14 @@ import javax.ws.rs.core.Response;
 public class ProductResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getProduct(@FormParam("naam") String naam, @FormParam("prijs") double prijs){
+    public Response nieuwProduct(@FormParam("productName") String naam, @FormParam("productPrijs") double prijs){
         Product product = new Product(naam, prijs);
         return Response.ok(product).build();
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAssortiment(){
+        return Response.ok(Product.getAssortiment()).build();
     }
 }

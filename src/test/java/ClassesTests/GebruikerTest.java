@@ -43,6 +43,6 @@ public class GebruikerTest {
     @Test
     public void zelfdeEmails() throws Exception{
         gebruiker3 = new Gebruiker("email1", "w8woord", false);
-        assertEquals(2, gebruiker3.getEmails().toArray().length);
+        assertEquals(2, gebruiker3.getGebruikers().toArray().length);
     }
 }
