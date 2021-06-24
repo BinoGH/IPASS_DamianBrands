@@ -1,4 +1,4 @@
-package nl.damian.IPASS.Classes;
+package nl.damian.IPASS.domein;
 
 import java.util.ArrayList;
 

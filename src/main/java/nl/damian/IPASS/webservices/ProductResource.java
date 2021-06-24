@@ -1,5 +1,5 @@
 package nl.damian.IPASS.webservices;
-import nl.damian.IPASS.Classes.Product;
+import nl.damian.IPASS.domein.Product;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;

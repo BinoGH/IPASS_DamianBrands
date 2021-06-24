@@ -1,7 +1,7 @@
 package ClassesTests;
 
-import nl.damian.IPASS.Classes.Gebruiker;
-import nl.damian.IPASS.Classes.Product;
+import nl.damian.IPASS.domein.Gebruiker;
+import nl.damian.IPASS.domein.Product;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

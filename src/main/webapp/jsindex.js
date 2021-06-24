@@ -1,9 +1,6 @@
-
 const productList = document.querySelector(".productList");
-const productListItems = productList.querySelector("li");
 
 fetch("restservices/product", {method: "GET"})
-
     .then(response => response.json())
     .then(function(myJson){
         let alleProducten = myJson;

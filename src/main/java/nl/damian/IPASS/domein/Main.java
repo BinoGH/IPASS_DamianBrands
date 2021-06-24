@@ -1,4 +1,4 @@
-package nl.damian.IPASS.Classes;
+package nl.damian.IPASS.domein;
 
 public class Main {
     public static void main(String args[]) throws Exception{

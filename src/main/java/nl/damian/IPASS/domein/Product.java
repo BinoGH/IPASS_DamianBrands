@@ -1,4 +1,4 @@
-package nl.damian.IPASS.Classes;
+package nl.damian.IPASS.domein;
 
 import java.util.ArrayList;
 
@@ -40,6 +40,10 @@ public class Product {
 
     public static ArrayList<Product> getAssortiment() {
         return assortiment;
+    }
+
+    public static void setAssortiment(ArrayList<Product> assortiment) {
+        Product.assortiment = assortiment;
     }
 
     public String toString(){

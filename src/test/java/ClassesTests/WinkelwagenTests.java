@@ -1,7 +1,7 @@
 package ClassesTests;
 
-import nl.damian.IPASS.Classes.Product;
-import nl.damian.IPASS.Classes.Winkelwagen;
+import nl.damian.IPASS.domein.Product;
+import nl.damian.IPASS.domein.Winkelwagen;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

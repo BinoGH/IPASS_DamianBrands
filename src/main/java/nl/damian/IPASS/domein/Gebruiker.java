@@ -1,4 +1,4 @@
-package nl.damian.IPASS.Classes;
+package nl.damian.IPASS.domein;
 
 import java.util.ArrayList;
 
@@ -14,24 +14,6 @@ public class Gebruiker {
         this.wachtwoord = wachtwoord;
         this.admin = admin;
 
-//        if
-//
-//        if(!gebruikers.contains(email)){
-//            if(admin.equals(false)){
-//                Winkelwagen winkelwagen = new Winkelwagen();
-//                gebruikers.add(email);
-//                this.email = email;
-//                this.wachtwoord = wachtwoord;
-//                this.admin = admin;
-//            }else{
-//                gebruikers.add(email);
-//                this.email = email;
-//                this.wachtwoord = wachtwoord;
-//                this.admin = admin;
-//            }
-//        }else{
-//            throw new Exception("Gebruikte email");
-//        }
     }
 
     public static Gebruiker createGebruiker(String email, String wachtwoord, Boolean admin){
@@ -44,9 +26,9 @@ public class Gebruiker {
         return null;
     }
 
-    public static Gebruiker login(String email, String wachtwoord){
-        
-    }
+//    public static Gebruiker login(String email, String wachtwoord){
+//
+//    }
 
     public Winkelwagen getWinkelwagen() {
         return winkelwagen;
@@ -88,5 +70,9 @@ public class Gebruiker {
 
     public static ArrayList<Gebruiker> getGebruikers() {
         return gebruikers;
+    }
+
+    public static void setGebruikers(ArrayList<Gebruiker> gebruikers) {
+        Gebruiker.gebruikers = gebruikers;
     }
 }
