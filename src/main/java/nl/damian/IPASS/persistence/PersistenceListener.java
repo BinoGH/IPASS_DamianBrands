@@ -15,7 +15,9 @@ public class PersistenceListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        Gebruiker.createGebruiker("mail@mail", "eend", true);
+        Gebruiker.createGebruiker("admin@mail", "eend", true);
+        Gebruiker.createGebruiker("user@mail", "pinguin", false);
+        Gebruiker.createGebruiker("user2@mail", "dolfijn", false);
         try{
             persistenceManager.loadBlobba();
         }catch (Exception e){
@@ -25,12 +27,13 @@ public class PersistenceListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        Schedulers.shutdownNow();
-        HttpResources.disposeLoopsAndConnectionsLater(Duration.ZERO, Duration.ZERO).block();
         try{
             persistenceManager.saveBlobba();
+
         }catch (Exception e){
             e.printStackTrace();
         }
+        Schedulers.shutdownNow();
+        HttpResources.disposeLoopsAndConnectionsLater(Duration.ZERO, Duration.ZERO).block();
     }
 }

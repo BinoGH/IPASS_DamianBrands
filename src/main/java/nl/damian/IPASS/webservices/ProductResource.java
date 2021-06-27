@@ -1,8 +1,13 @@
 package nl.damian.IPASS.webservices;
+import nl.damian.IPASS.domein.Gebruiker;
 import nl.damian.IPASS.domein.Product;
+
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 
 @Path("product")
 public class ProductResource {

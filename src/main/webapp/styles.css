@@ -275,3 +275,21 @@ input#productPrijs{
     text-align: left;
     font-family: "Helvetica", sans-serif;
 }
+
+.loginButton > * {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 150px;
+    background: #3d8af7;
+    color: #FFFFFF;
+    height: 34px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    transition: 0.2s;
+}
+
+.loginButton > * :hover{
+    background: #71bc83;
+}

@@ -1,14 +1,16 @@
 package nl.damian.IPASS.domein;
 
 import java.io.Serializable;
+import java.security.Principal;
 import java.util.ArrayList;
 
-public class Gebruiker implements Serializable {
+public class Gebruiker implements Serializable, Principal {
     private String email;
     private String wachtwoord;
     private Boolean admin;
     private Winkelwagen winkelwagen = new Winkelwagen();
     private static ArrayList<Gebruiker> gebruikers = new ArrayList<>();
+    private String role;
 
     public Gebruiker(String email, String wachtwoord, Boolean admin){
         this.email = email;
@@ -26,10 +28,6 @@ public class Gebruiker implements Serializable {
         }
         return null;
     }
-
-//    public static Gebruiker login(String email, String wachtwoord){
-//
-//    }
 
     public Winkelwagen getWinkelwagen() {
         return winkelwagen;
@@ -75,5 +73,40 @@ public class Gebruiker implements Serializable {
 
     public static void setGebruikers(ArrayList<Gebruiker> gebruikers) {
         Gebruiker.gebruikers = gebruikers;
+    }
+
+    public static String validateLogin(String email, String password){
+        for(Gebruiker geb : getGebruikers()){
+            if(geb.getEmail().equals(email)){
+                if(geb.getWachtwoord().equals(password)){
+                    if(geb.getAdmin() == true){
+                        return "admin";
+                    }
+                    return "user";
+                }
+            }
+        }
+        return null;
+    }
+
+    public static Gebruiker getGebruikerByEmail(String email){
+        for (Gebruiker geb : getGebruikers()){
+            if (geb.getEmail() == email){
+                return geb;
+            }
+        }
+        return null;
+    }
+
+    public String getRole() {
+        if(getAdmin()){
+            return "admin";
+        }
+        return "user";
+    }
+
+    @Override
+    public String getName() {
+        return null;
     }
 }
