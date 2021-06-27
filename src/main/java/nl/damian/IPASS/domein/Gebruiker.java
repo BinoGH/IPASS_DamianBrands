@@ -16,7 +16,6 @@ public class Gebruiker implements Serializable, Principal {
         this.email = email;
         this.wachtwoord = wachtwoord;
         this.admin = admin;
-
     }
 
     public static Gebruiker createGebruiker(String email, String wachtwoord, Boolean admin){
@@ -61,10 +60,6 @@ public class Gebruiker implements Serializable, Principal {
         if(admin){
             Product p1 = new Product(naam, prijs);
         }
-    }
-
-    public void emptyEmails(){
-        gebruikers.clear();
     }
 
     public static ArrayList<Gebruiker> getGebruikers() {
