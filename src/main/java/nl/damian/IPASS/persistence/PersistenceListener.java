@@ -15,7 +15,7 @@ public class PersistenceListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        Gebruiker.createGebruiker("mail@mail", "pinguin", true);
+        Gebruiker.createGebruiker("mail@mail", "eend", true);
         try{
             persistenceManager.loadBlobba();
         }catch (Exception e){

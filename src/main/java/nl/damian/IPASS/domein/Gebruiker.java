@@ -1,8 +1,9 @@
 package nl.damian.IPASS.domein;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Gebruiker {
+public class Gebruiker implements Serializable {
     private String email;
     private String wachtwoord;
     private Boolean admin;

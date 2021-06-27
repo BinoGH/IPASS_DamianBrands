@@ -1,8 +1,9 @@
 package nl.damian.IPASS.domein;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Product {
+public class Product implements Serializable {
     private String name;
     private double prijs;
     private String beschrijving;

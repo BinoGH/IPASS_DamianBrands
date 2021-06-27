@@ -16,14 +16,17 @@ import static nl.damian.IPASS.domein.Gebruiker.getGebruikers;
 import static nl.damian.IPASS.domein.Product.getAssortiment;
 
 public class PersistenceManager {
-    private final static String ENDPOINT = "https://binocitiesblob.file.core.windows.net/";
-    private final static String SASTOKEN = "?sv=2020-02-10&ss=b&srt=sco&sp=rwdlactfx&se=2021-06-01T23:22:41Z&st=2021-06-01T15:22:41Z&spr=https&sig=CzfNbFgmrUfYCnqg289lEB6kk3Zi5nBifAAAS6OZzQY%3D";
-    private final static String CONTAINER = "bankcontainer";
+    private final static String ENDPOINT = "https://binocitiesblob.blob.core.windows.net/";
+    private final static String SASTOKEN = "?sv=2020-02-10&ss=b&srt=sco&sp=rwdlactfx&se=2021-08-31T23:30:23Z&st=2021-06-25T15:30:23Z&spr=https&sig=DCF7OjAd%2BHR14JgbXtPGjS6BMe3DyLzupYbH8KnfXjQ%3D";
+    private final static String CONTAINER = "shoppiecontainer";
 
     private static BlobContainerClient blobContainer = new BlobContainerClientBuilder()
             .endpoint(ENDPOINT).sasToken(SASTOKEN).containerName(CONTAINER).buildClient();
 
     public void saveBlobba() throws IOException {
+        if (!blobContainer.exists()){
+            blobContainer.create();
+        }
         BlobClient blob = blobContainer.getBlobClient("ShopBlob");
         CollectiveClass all = new CollectiveClass();
 
@@ -59,6 +62,10 @@ public class PersistenceManager {
 
                 Product.setAssortiment(loadedClasses.getAssortiment());
                 Gebruiker.setGebruikers(loadedClasses.getGebruikers());
+
+                bais.close();
+                baos.close();
+                ois.close();
             }
         }
     }

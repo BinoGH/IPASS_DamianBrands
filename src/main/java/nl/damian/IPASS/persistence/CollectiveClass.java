@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class CollectiveClass implements Serializable {
-    private ArrayList<Product> assortiment = new ArrayList<Product>();
+    private ArrayList<Product> assortiment = new ArrayList<>();
     private ArrayList<Gebruiker> gebruikers = new ArrayList<>();
 
     public ArrayList<Product> getAssortiment() {

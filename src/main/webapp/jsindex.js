@@ -14,6 +14,8 @@ fetch("restservices/product", {method: "GET"})
             productPrijs.textContent=product.prijs
             productPrijs.className="productPrijs";
 
+
+
             productHouder.appendChild(productName);
             productHouder.appendChild(productPrijs);
             productList.appendChild(productHouder);

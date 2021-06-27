@@ -1,8 +1,9 @@
 package nl.damian.IPASS.domein;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Winkelwagen {
+public class Winkelwagen implements Serializable {
     private ArrayList<Product> producten = new ArrayList<Product>();
     private double totalPrice;
 
